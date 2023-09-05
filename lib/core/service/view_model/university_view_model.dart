@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:university_lists/core/service/model/university_model.dart';
 import 'package:university_lists/core/service/university_web_service.dart';
 
