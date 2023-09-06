@@ -13,8 +13,8 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Universities'),
         ),
-        body: const Column(children: [
-          TabBar(tabs: [
+        body: Column(children: [
+          const TabBar(tabs: [
             Tab(
               icon: Icon(
                 Icons.home,
