@@ -20,8 +20,10 @@ class MainTabbar extends StatelessWidget {
         return ListTile(
           trailing: InkWell(
             onTap: () {
-              // when press favorite button
               print("favorite button pressed");
+              if (university?.university?.name != null) {
+                favoritesModel.toggleFavorites(university!.university!.name);
+              }
             },
             child: Icon(
               (university?.university?.name != null &&

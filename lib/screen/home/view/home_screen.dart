@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Universities'),
+          title: const Text('Üniversiteler'),
         ),
         body: FutureBuilder(
             future:
@@ -36,13 +36,13 @@ class Home extends StatelessWidget {
                     Tab(
                       icon: Icon(
                         Icons.star,
-                        color: Colors.yellowAccent,
+                        color: Colors.deepOrange,
                       ),
                     )
                   ]),
                   Expanded(
                       child: TabBarView(children: [
-                    MainTabbar(),
+                    const MainTabbar(),
                     FavoritesTabbar(),
                   ]))
                 ]);
