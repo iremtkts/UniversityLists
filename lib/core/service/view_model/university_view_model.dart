@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:university_lists/core/service/model/university_model.dart';
 import 'package:university_lists/core/service/university_web_service.dart';
 
@@ -9,7 +10,7 @@ class UniversityViewModel {
   University? get university => _university;
 }
 
-class UniversityListsViewModel {
+class UniversityListsViewModel extends ChangeNotifier {
   List<UniversityViewModel>? _universities;
   List<UniversityViewModel>? get universities => _universities;
 
@@ -18,6 +19,7 @@ class UniversityListsViewModel {
       final result = await WebService().fetchData();
       print(result);
       _universities = result.map((e) => UniversityViewModel(e)).toList();
+      notifyListeners();
     } catch (e) {
       print("bir hata oluştu : $e");
     }
