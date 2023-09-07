@@ -17,7 +17,8 @@ class FavoritesTabbar extends StatelessWidget {
     return ListView.builder(
       itemCount: favoriteNames.length,
       itemBuilder: (context, index) {
-        var university = universityModel.universities?[index];
+        var university = universityModel.universities
+            ?.firstWhere((u) => u.university?.name == favoriteNames[index]);
         return ListTile(
           title: Text(favoriteNames[index]),
           onTap: () async {
