@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:university_lists/base/view_model/base_view_model.dart';
 
-class FavoriteUniversitiesViewModel extends ChangeNotifier {
+class FavoriteUniversitiesViewModel extends BaseViewModel {
   Set<String> favoriteUniversityNames = {};
 
   bool isFavorite(String universityName) {
@@ -16,4 +17,11 @@ class FavoriteUniversitiesViewModel extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  List<String> getFavorites() {
+    return favoriteUniversityNames.toList();
+  }
+
+  @override
+  FutureOr<void> init() {}
 }
